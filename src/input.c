@@ -4,57 +4,57 @@
  * SDL_KEYDOWN_FUNC - process input when a key is down
  * @event: union that contains structures for the different event types
  */
+
 void SDL_KEYDOWN_FUNC(SDL_Event event)
 {
-	switch (event.key.keysym.sym)
-	{
-	case SDLK_ESCAPE:
+	if (event.key.keysym.sym == SDLK_ESCAPE)
 		GameRunning = false;
-		break;
-	case SDLK_UP:
-	case SDLK_w:
+	if (event.key.keysym.sym == SDLK_UP)
 		player.walkDirection = +1;
-		break;
-	case SDLK_DOWN:
-	case SDLK_s:
+	if (event.key.keysym.sym == SDLK_DOWN)
 		player.walkDirection = -1;
-		break;
-	case SDLK_RIGHT:
-	case SDLK_d:
+	if (event.key.keysym.sym == SDLK_RIGHT)
 		player.turnDirection = +1;
-		break;
-	case SDLK_LEFT:
-	case SDLK_a:
+	if (event.key.keysym.sym == SDLK_LEFT)
 		player.turnDirection = -1;
-		break;
-	}
+	if (event.key.keysym.sym == SDLK_w)
+		player.walkDirection = +1;
+	if (event.key.keysym.sym == SDLK_s)
+		player.walkDirection = -1;
+	if (event.key.keysym.sym == SDLK_a)
+		player.turnDirection = -1;
+	if (event.key.keysym.sym == SDLK_d)
+		player.turnDirection = +1;
 }
 
 /**
  * SDL_KEYUP_FUNC - process input when a key is up
  * @event: union that contains structures for the different event types
  */
+
 void SDL_KEYUP_FUNC(SDL_Event event)
 {
-	switch (event.key.keysym.sym)
-	{
-	case SDLK_UP:
-	case SDLK_w:
-	case SDLK_DOWN:
-	case SDLK_s:
+	if (event.key.keysym.sym == SDLK_UP)
 		player.walkDirection = 0;
-		break;
-	case SDLK_RIGHT:
-	case SDLK_d:
-	case SDLK_LEFT:
-	case SDLK_a:
+	if (event.key.keysym.sym == SDLK_DOWN)
+		player.walkDirection = 0;
+	if (event.key.keysym.sym == SDLK_RIGHT)
 		player.turnDirection = 0;
-		break;
-	}
+	if (event.key.keysym.sym == SDLK_LEFT)
+		player.turnDirection = 0;
+	if (event.key.keysym.sym == SDLK_w)
+		player.walkDirection = 0;
+	if (event.key.keysym.sym == SDLK_s)
+		player.walkDirection = 0;
+	if (event.key.keysym.sym == SDLK_a)
+		player.turnDirection = 0;
+	if (event.key.keysym.sym == SDLK_d)
+		player.turnDirection = 0;
 }
 
 /**
  * handleInput - process input from the keyboard
+ *
  */
 void handleInput(void)
 {
@@ -62,16 +62,10 @@ void handleInput(void)
 
 	SDL_PollEvent(&event);
 
-	switch (event.type)
-	{
-	case SDL_QUIT:
+	if (event.type == SDL_QUIT)
 		GameRunning = false;
-		break;
-	case SDL_KEYDOWN:
+	else if (event.type == SDL_KEYDOWN)
 		SDL_KEYDOWN_FUNC(event);
-		break;
-	case SDL_KEYUP:
+	else if (event.type == SDL_KEYUP)
 		SDL_KEYUP_FUNC(event);
-		break;
-	}
 }
