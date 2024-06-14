@@ -1,20 +1,20 @@
 #include "../headers/header.h"
 
 static const char *textureFileNames[NUM_TEXTURES] = {
-	"./pics/redbrick.png",
-	"./pics/purplestone.png",
-	"./pics/mossystone.png",
-	"./pics/graystone.png",
-	"./pics/colorstone.png",
-	"./pics/bluestone.png",
-	"./pics/wood.png",
-	"./pics/eagle.png",
+	"./images/redbrick.png",
+	"./images/purplestone.png",
+	"./images/mossystone.png",
+	"./images/graystone.png",
+	"./images/colorstone.png",
+	"./images/bluestone.png",
+	"./images/wood.png",
+	"./images/eagle.png",
 };
 
 /**
  * WallTexturesready - load textures in the respective position
  *
- */
+*/
 void WallTexturesready(void)
 {
 	int i;
@@ -37,12 +37,13 @@ void WallTexturesready(void)
 			}
 		}
 	}
+
 }
 
 /**
  * freeWallTextures - free wall textures
  *
- */
+*/
 
 void freeWallTextures(void)
 {

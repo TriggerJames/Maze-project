@@ -99,7 +99,7 @@ void renderPlayer(void);
  * @rayAngle: ray angle
  * @wallHitX: wall hit x coordinate
  * @wallHitY: wall hit x coordinate
- * @distance: distance to the wall
+ * @distance: ditance to the wall
  * @wasHitVertical: verify hit vertical
  * @wallHitContent: wall hit content
  */

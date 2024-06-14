@@ -3,7 +3,7 @@
 /**
  * SDL_KEYDOWN_FUNC - process input when a key is down
  * @event: union that contains structures for the different event types
- */
+*/
 
 void SDL_KEYDOWN_FUNC(SDL_Event event)
 {
@@ -30,7 +30,7 @@ void SDL_KEYDOWN_FUNC(SDL_Event event)
 /**
  * SDL_KEYUP_FUNC - process input when a key is up
  * @event: union that contains structures for the different event types
- */
+*/
 
 void SDL_KEYUP_FUNC(SDL_Event event)
 {
@@ -55,7 +55,7 @@ void SDL_KEYUP_FUNC(SDL_Event event)
 /**
  * handleInput - process input from the keyboard
  *
- */
+*/
 void handleInput(void)
 {
 	SDL_Event event;
